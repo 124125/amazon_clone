@@ -16,35 +16,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Amazon Clone',
+
+      // whenever navigator.push or named route is called this onGenerateRoute will be called in
+
       onGenerateRoute: (settings) => generateRoute(settings),
+
+      // theme data on how app ui will look like
+      //
       theme: ThemeData(
-          // useMaterial3: true,
-          scaffoldBackgroundColor: GlobleVariables.backgroundColor,
-          colorScheme: const ColorScheme.light(
-            primary: GlobleVariables.secondaryColor,
-          ),
-          appBarTheme: const AppBarTheme(
-              elevation: 0,
-              iconTheme: IconThemeData(
-                color: Colors.black,
-              ))),
-      home: Scaffold(
-        appBar: AppBar(
-            backgroundColor: GlobleVariables.secondaryColor,
-            title: Text('hello')),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Builder(builder: (context) {
-              return ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, AuthScreen.routeName);
-                  },
-                  child: const Text('open'));
-            })
-          ],
+        // useMaterial3: true,
+        useMaterial3: false,
+        scaffoldBackgroundColor: GlobleVariables.backgroundColor,
+        appBarTheme: const AppBarTheme(
+            elevation: 0,
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            )),
+        colorScheme: const ColorScheme.light(
+          primary: GlobleVariables.secondaryColor,
         ),
       ),
+
+      // home page will be open when u open app for first time
+      home: AuthScreen(),
     );
   }
 }
