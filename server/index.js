@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const productRouter = require("./routes/product");
 const userRouter = require("./routes/user");
 
-// const DB_URL = "mongodb+srv://devilsmachine:devilsmachine@cluster0.uzitvym.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+// const DB_URL = ""
 const DB_URL = "mongodb://localhost:27017/amazon_clone_app"
 const PORT = 3000;
 const app = express();
